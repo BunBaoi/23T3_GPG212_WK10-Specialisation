@@ -34,11 +34,15 @@ public class MyCustomEditor : EditorWindow
         rootVisualElement.Add(splitView);
 
         // A TwoPanelSplitView always needs exactly two child elements
-        var leftPane = new VisualElement();
-        splitView.Add(leftPane);
+        var leftPane = new ListView();
+        splitView.Add(leftPane);        
         var rightPane = new VisualElement();
         splitView.Add(rightPane);
-    }
 
+        // Initialise the list view with all sprites' names
+        leftPane.makeItem = () => new Label();
+        leftPane.bindItem = (item, index) => { (item as Label).text = allObjects[index].name; };
+        leftPane.itemsSource = allObjects;
+    }
 
 }
