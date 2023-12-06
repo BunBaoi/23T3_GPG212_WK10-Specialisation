@@ -6,6 +6,7 @@ public static class PerlinNoise
 {
     public static float[,] GenerateNoiseMap(int mapWidth, int mapHeight, int seed, float scale, int octaves, float persistance, float lacunarity, Vector2 offset)
     {
+        Debug.Log(mapWidth + " " + mapHeight + " " + seed); // Detect the size.x, size.y
         float[,] noiseMap = new float[mapWidth, mapHeight];
 
         System.Random prng = new System.Random(seed);
@@ -52,9 +53,13 @@ public static class PerlinNoise
                 }
 
                 if (noiseHeight < minValue)
+                { 
                     minValue = noiseHeight;
+                }
                 if (noiseHeight > maxValue)
+                {
                     maxValue = noiseHeight;
+                }
 
                 noiseMap[x, y] = noiseHeight;
             }

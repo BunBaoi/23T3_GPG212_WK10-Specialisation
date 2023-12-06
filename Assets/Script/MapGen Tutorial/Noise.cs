@@ -4,12 +4,14 @@ using UnityEngine;
 
 public static class Noise
 {
-    public static float[,] GenerateNoiseMap(int mapWidth, int mapHeight, int seed,float scale, int octaves, float persistance, float lacunarity, Vector2 offset)
+    public static float[,] GenerateNoiseMap(int mapWidth, int mapHeight, int seed, float scale, int octaves, float persistance, float lacunarity, Vector2 offset)
     {
+        Debug.Log(mapWidth + " " + mapHeight + " " + seed);
         float[,] noiseMap = new float[mapWidth, mapHeight];
 
-        System.Random prng = new System.Random (seed);
+        System.Random prng = new System.Random(seed);
         Vector2[] octaveOffsets = new Vector2[octaves];
+
         for (int i = 0; i < octaves; i++)
         {
             float offsetX = prng.Next(-10000, 10000) + offset.x;
