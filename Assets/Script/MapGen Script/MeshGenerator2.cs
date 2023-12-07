@@ -29,8 +29,6 @@ public class MeshGenerator2 : MonoBehaviour
     public float falloffEnd;
     [Range(0, 1)]
 
-    
-
     public bool autoUpdate;
 
     public void GenerateWorld()

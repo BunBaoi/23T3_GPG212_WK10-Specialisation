@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class FallOffGenerator
+public class FallOffGen
 {
     public static float[,] Generate(Vector2Int size, float falloffStart, float falloffEnd)
     {

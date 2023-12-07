@@ -46,6 +46,7 @@ public class PlacementGenerator : MonoBehaviour
                 Random.Range(minScale.x, maxScale.x),
                 Random.Range(minScale.y, maxScale.y),
                 Random.Range(minScale.z, maxScale.z));
+            Debug.Log(minScale);
         }
     }
 
